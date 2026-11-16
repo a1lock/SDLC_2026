@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+# Page(BaseModel, Generic[T]) оставлен в классическом виде: так он гарантированно
+# работает с Pydantic v2 на всех поддерживаемых версиях.
+ignore = ["UP046"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+fail_under = 70
+show_missing = true
