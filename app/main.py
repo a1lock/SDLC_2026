@@ -12,7 +12,8 @@ from app.routers.references import reference_routers
 
 DESCRIPTION = """
 Серверная часть информационной системы автоматизации складского учета материалов
-(ТЗ-ИС-СКЛАД-01). 
+(ТЗ-ИС-СКЛАД-01). Для работы с API получите токен через `POST /auth/login` и передавайте
+его в заголовке `Authorization: Bearer <токен>`.
 """
 
 setup_logging(get_settings().log_level)
